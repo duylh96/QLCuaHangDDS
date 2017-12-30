@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLCuaHangDDS.GUI.ManHinhLapHoaDon;
+using QLCuaHangDDS.GUI.ManHinhBanHang;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -30,12 +30,12 @@ namespace QLCuaHangDDS.GUI
             return null;
         }
 
-        private void btn_LapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btn_BanHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(LapHoaDon));
+            Form frm = kiemtraform(typeof(BanHang));
             if (frm == null)
             {
-                LapHoaDon forms = new LapHoaDon();
+                BanHang forms = new BanHang();
                 forms.MdiParent = this;
                 forms.Show();
             }
