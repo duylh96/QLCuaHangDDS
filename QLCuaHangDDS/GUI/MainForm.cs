@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLCuaHangDDS.GUI.ManHinhLapHoaDon;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -15,6 +16,33 @@ namespace QLCuaHangDDS.GUI
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private Form kiemtraform(Type ftype)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == ftype)
+                {
+                    return f;
+                }
+            }
+            return null;
+        }
+
+        private void btn_LapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(LapHoaDon));
+            if (frm == null)
+            {
+                LapHoaDon forms = new LapHoaDon();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
     }
 }
