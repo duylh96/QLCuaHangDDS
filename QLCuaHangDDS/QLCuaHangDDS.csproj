@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -107,6 +108,18 @@
     <Folder Include="BUS\" />
     <Folder Include="DAO\" />
     <Folder Include="GUI\ManHinhNhapHang\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\009-laptop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\004-networking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\001-resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icon\007-laptop-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

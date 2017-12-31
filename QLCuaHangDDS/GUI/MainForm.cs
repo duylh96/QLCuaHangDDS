@@ -60,5 +60,10 @@ namespace QLCuaHangDDS.GUI
                 frm.Activate();
             }
         }
+
+        private void btn_HangSanXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

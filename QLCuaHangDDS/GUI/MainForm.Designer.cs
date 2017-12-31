@@ -32,10 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_BanHang = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_HangHoa = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhanLoai = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_HangSanXuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,10 +57,9 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.btn_BanHang,
-            this.barButtonItem4,
             this.btn_HangHoa,
-            this.barButtonItem2,
-            this.barButtonItem3});
+            this.btn_PhanLoai,
+            this.btn_HangSanXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -80,42 +78,35 @@
             this.btn_BanHang.Caption = "Bán hàng";
             this.btn_BanHang.Id = 2;
             this.btn_BanHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_BanHang.ImageOptions.Image")));
-            this.btn_BanHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_BanHang.ImageOptions.LargeImage")));
+            this.btn_BanHang.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources._009_laptop;
             this.btn_BanHang.Name = "btn_BanHang";
             this.btn_BanHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BanHang_ItemClick);
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Nhập hàng";
-            this.barButtonItem4.Id = 7;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // btn_HangHoa
             // 
             this.btn_HangHoa.Caption = "Hàng hóa";
             this.btn_HangHoa.Id = 9;
             this.btn_HangHoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HangHoa.ImageOptions.Image")));
-            this.btn_HangHoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_HangHoa.ImageOptions.LargeImage")));
+            this.btn_HangHoa.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources._004_networking;
             this.btn_HangHoa.Name = "btn_HangHoa";
             this.btn_HangHoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HangHoa_ItemClick);
             // 
-            // barButtonItem2
+            // btn_PhanLoai
             // 
-            this.barButtonItem2.Caption = "Phân loại";
-            this.barButtonItem2.Id = 10;
-            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btn_PhanLoai.Caption = "Phân loại";
+            this.btn_PhanLoai.Id = 10;
+            this.btn_PhanLoai.ImageOptions.Image = global::QLCuaHangDDS.Properties.Resources._001_resume;
+            this.btn_PhanLoai.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources._001_resume;
+            this.btn_PhanLoai.Name = "btn_PhanLoai";
             // 
-            // barButtonItem3
+            // btn_HangSanXuat
             // 
-            this.barButtonItem3.Caption = "Nhà sản xuất";
-            this.barButtonItem3.Id = 11;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btn_HangSanXuat.Caption = "Hãng sản xuất";
+            this.btn_HangSanXuat.Id = 11;
+            this.btn_HangSanXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btn_HangSanXuat.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources._007_laptop_1;
+            this.btn_HangSanXuat.Name = "btn_HangSanXuat";
+            this.btn_HangSanXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HangSanXuat_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -133,10 +124,9 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_HangHoa);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_PhanLoai);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_HangSanXuat);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Quản lý hàng";
             // 
@@ -221,11 +211,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.BarButtonItem btn_HangHoa;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btn_PhanLoai;
+        private DevExpress.XtraBars.BarButtonItem btn_HangSanXuat;
     }
 }
