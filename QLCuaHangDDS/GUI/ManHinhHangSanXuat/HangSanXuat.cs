@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLCuaHangDDS.GUI.ManHinhHangHoa
+namespace QLCuaHangDDS.GUI.ManHinhHangSanXuat
 {
-    public partial class ThongTinHang : Form
+    public partial class HangSanXuat : Form
     {
-        public ThongTinHang()
+        public HangSanXuat()
         {
             InitializeComponent();
         }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_BanHang = new DevExpress.XtraBars.BarButtonItem();
@@ -46,7 +45,7 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +69,7 @@
             this.ribbonPage5,
             this.ribbonPage3});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(720, 116);
+            this.ribbonControl1.Size = new System.Drawing.Size(904, 116);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // btn_BanHang
@@ -103,7 +102,7 @@
             // 
             this.btn_HangSanXuat.Caption = "Hãng sản xuất";
             this.btn_HangSanXuat.Id = 11;
-            this.btn_HangSanXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btn_HangSanXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HangSanXuat.ImageOptions.Image")));
             this.btn_HangSanXuat.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources._007_laptop_1;
             this.btn_HangSanXuat.Name = "btn_HangSanXuat";
             this.btn_HangSanXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HangSanXuat_ItemClick);
@@ -185,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 261);
+            this.ClientSize = new System.Drawing.Size(904, 462);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "MainForm";

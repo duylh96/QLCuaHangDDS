@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLCuaHangDDS.GUI.ManHinhBanHang;
 using QLCuaHangDDS.GUI.ManHinhHangHoa;
+using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -63,7 +64,17 @@ namespace QLCuaHangDDS.GUI
 
         private void btn_HangSanXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Form frm = kiemtraform(typeof(HangSanXuat));
+            if (frm == null)
+            {
+                HangSanXuat forms = new HangSanXuat();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
         }
     }
 }
