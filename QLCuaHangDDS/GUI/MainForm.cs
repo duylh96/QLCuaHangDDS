@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLCuaHangDDS.GUI.ManHinhBanHang;
+using QLCuaHangDDS.GUI.ManHinhHangHoa;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -36,6 +37,21 @@ namespace QLCuaHangDDS.GUI
             if (frm == null)
             {
                 BanHang forms = new BanHang();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btn_HangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(ThongTinHang));
+            if (frm == null)
+            {
+                ThongTinHang forms = new ThongTinHang();
                 forms.MdiParent = this;
                 forms.Show();
             }
