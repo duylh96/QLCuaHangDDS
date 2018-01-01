@@ -111,6 +111,7 @@
             this.btn_xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_xoa.ImageOptions.Image")));
             this.btn_xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_xoa.ImageOptions.LargeImage")));
             this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_xoa_ItemClick);
             // 
             // btn_dong
             // 

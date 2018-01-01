@@ -108,25 +108,31 @@
             // 
             // btn_HuyThayDoi
             // 
+            this.btn_HuyThayDoi.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_HuyThayDoi.Appearance.Options.UseFont = true;
             this.btn_HuyThayDoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyThayDoi.ImageOptions.Image")));
             this.btn_HuyThayDoi.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn_HuyThayDoi.Location = new System.Drawing.Point(347, 298);
+            this.btn_HuyThayDoi.Location = new System.Drawing.Point(347, 292);
             this.btn_HuyThayDoi.Name = "btn_HuyThayDoi";
-            this.btn_HuyThayDoi.Size = new System.Drawing.Size(331, 55);
+            this.btn_HuyThayDoi.Size = new System.Drawing.Size(331, 61);
             this.btn_HuyThayDoi.StyleController = this.layoutControl1;
             this.btn_HuyThayDoi.TabIndex = 13;
             this.btn_HuyThayDoi.Text = "Đóng";
+            this.btn_HuyThayDoi.Click += new System.EventHandler(this.btn_HuyThayDoi_Click);
             // 
             // btn_CapNhat
             // 
+            this.btn_CapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_CapNhat.Appearance.Options.UseFont = true;
             this.btn_CapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.ImageOptions.Image")));
             this.btn_CapNhat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btn_CapNhat.Location = new System.Drawing.Point(12, 298);
+            this.btn_CapNhat.Location = new System.Drawing.Point(12, 292);
             this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(331, 55);
+            this.btn_CapNhat.Size = new System.Drawing.Size(331, 61);
             this.btn_CapNhat.StyleController = this.layoutControl1;
             this.btn_CapNhat.TabIndex = 12;
             this.btn_CapNhat.Text = "Cập nhật";
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
             // labelControl2
             // 
@@ -155,7 +161,7 @@
             this.edt_MoTa.Location = new System.Drawing.Point(129, 36);
             this.edt_MoTa.Multiline = true;
             this.edt_MoTa.Name = "edt_MoTa";
-            this.edt_MoTa.Size = new System.Drawing.Size(549, 258);
+            this.edt_MoTa.Size = new System.Drawing.Size(549, 252);
             this.edt_MoTa.TabIndex = 8;
             // 
             // layoutControlGroup1
@@ -192,7 +198,7 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 12F);
             this.layoutControlItem5.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem5.Size = new System.Drawing.Size(670, 262);
+            this.layoutControlItem5.Size = new System.Drawing.Size(670, 256);
             this.layoutControlItem5.Text = "Mô tả (*) :";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(114, 13);
             // 
@@ -208,18 +214,18 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btn_CapNhat;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 286);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 280);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(335, 59);
+            this.layoutControlItem2.Size = new System.Drawing.Size(335, 65);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btn_HuyThayDoi;
-            this.layoutControlItem3.Location = new System.Drawing.Point(335, 286);
+            this.layoutControlItem3.Location = new System.Drawing.Point(335, 280);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(335, 59);
+            this.layoutControlItem3.Size = new System.Drawing.Size(335, 65);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
