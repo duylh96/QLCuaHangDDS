@@ -30,9 +30,6 @@ namespace QLCuaHangDDS.DAO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertHANGSANXUAT(HANGSANXUAT instance);
-    partial void UpdateHANGSANXUAT(HANGSANXUAT instance);
-    partial void DeleteHANGSANXUAT(HANGSANXUAT instance);
     partial void InsertBANGSUACHUA(BANGSUACHUA instance);
     partial void UpdateBANGSUACHUA(BANGSUACHUA instance);
     partial void DeleteBANGSUACHUA(BANGSUACHUA instance);
@@ -51,6 +48,9 @@ namespace QLCuaHangDDS.DAO
     partial void InsertDICHVU(DICHVU instance);
     partial void UpdateDICHVU(DICHVU instance);
     partial void DeleteDICHVU(DICHVU instance);
+    partial void InsertHANGSANXUAT(HANGSANXUAT instance);
+    partial void UpdateHANGSANXUAT(HANGSANXUAT instance);
+    partial void DeleteHANGSANXUAT(HANGSANXUAT instance);
     partial void InsertHOADONBANHANG(HOADONBANHANG instance);
     partial void UpdateHOADONBANHANG(HOADONBANHANG instance);
     partial void DeleteHOADONBANHANG(HOADONBANHANG instance);
@@ -104,14 +104,6 @@ namespace QLCuaHangDDS.DAO
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<HANGSANXUAT> HANGSANXUATs
-		{
-			get
-			{
-				return this.GetTable<HANGSANXUAT>();
-			}
-		}
-		
 		public System.Data.Linq.Table<BANGSUACHUA> BANGSUACHUAs
 		{
 			get
@@ -157,6 +149,14 @@ namespace QLCuaHangDDS.DAO
 			get
 			{
 				return this.GetTable<DICHVU>();
+			}
+		}
+		
+		public System.Data.Linq.Table<HANGSANXUAT> HANGSANXUATs
+		{
+			get
+			{
+				return this.GetTable<HANGSANXUAT>();
 			}
 		}
 		
@@ -214,120 +214,6 @@ namespace QLCuaHangDDS.DAO
 			{
 				return this.GetTable<QUYDINH>();
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HANGSANXUAT")]
-	public partial class HANGSANXUAT : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TenHangSX;
-		
-		private string _MoTa;
-		
-		private EntitySet<MATHANG> _MATHANGs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTenHangSXChanging(string value);
-    partial void OnTenHangSXChanged();
-    partial void OnMoTaChanging(string value);
-    partial void OnMoTaChanged();
-    #endregion
-		
-		public HANGSANXUAT()
-		{
-			this._MATHANGs = new EntitySet<MATHANG>(new Action<MATHANG>(this.attach_MATHANGs), new Action<MATHANG>(this.detach_MATHANGs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHangSX", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TenHangSX
-		{
-			get
-			{
-				return this._TenHangSX;
-			}
-			set
-			{
-				if ((this._TenHangSX != value))
-				{
-					this.OnTenHangSXChanging(value);
-					this.SendPropertyChanging();
-					this._TenHangSX = value;
-					this.SendPropertyChanged("TenHangSX");
-					this.OnTenHangSXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTa", DbType="NVarChar(MAX)")]
-		public string MoTa
-		{
-			get
-			{
-				return this._MoTa;
-			}
-			set
-			{
-				if ((this._MoTa != value))
-				{
-					this.OnMoTaChanging(value);
-					this.SendPropertyChanging();
-					this._MoTa = value;
-					this.SendPropertyChanged("MoTa");
-					this.OnMoTaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HANGSANXUAT_MATHANG", Storage="_MATHANGs", ThisKey="TenHangSX", OtherKey="TenHangSX")]
-		public EntitySet<MATHANG> MATHANGs
-		{
-			get
-			{
-				return this._MATHANGs;
-			}
-			set
-			{
-				this._MATHANGs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_MATHANGs(MATHANG entity)
-		{
-			this.SendPropertyChanging();
-			entity.HANGSANXUAT = this;
-		}
-		
-		private void detach_MATHANGs(MATHANG entity)
-		{
-			this.SendPropertyChanging();
-			entity.HANGSANXUAT = null;
 		}
 	}
 	
@@ -1509,6 +1395,120 @@ namespace QLCuaHangDDS.DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HANGSANXUAT")]
+	public partial class HANGSANXUAT : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenHangSX;
+		
+		private string _MoTa;
+		
+		private EntitySet<MATHANG> _MATHANGs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenHangSXChanging(string value);
+    partial void OnTenHangSXChanged();
+    partial void OnMoTaChanging(string value);
+    partial void OnMoTaChanged();
+    #endregion
+		
+		public HANGSANXUAT()
+		{
+			this._MATHANGs = new EntitySet<MATHANG>(new Action<MATHANG>(this.attach_MATHANGs), new Action<MATHANG>(this.detach_MATHANGs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHangSX", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenHangSX
+		{
+			get
+			{
+				return this._TenHangSX;
+			}
+			set
+			{
+				if ((this._TenHangSX != value))
+				{
+					this.OnTenHangSXChanging(value);
+					this.SendPropertyChanging();
+					this._TenHangSX = value;
+					this.SendPropertyChanged("TenHangSX");
+					this.OnTenHangSXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTa", DbType="NVarChar(MAX)")]
+		public string MoTa
+		{
+			get
+			{
+				return this._MoTa;
+			}
+			set
+			{
+				if ((this._MoTa != value))
+				{
+					this.OnMoTaChanging(value);
+					this.SendPropertyChanging();
+					this._MoTa = value;
+					this.SendPropertyChanged("MoTa");
+					this.OnMoTaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HANGSANXUAT_MATHANG", Storage="_MATHANGs", ThisKey="TenHangSX", OtherKey="TenHangSX")]
+		public EntitySet<MATHANG> MATHANGs
+		{
+			get
+			{
+				return this._MATHANGs;
+			}
+			set
+			{
+				this._MATHANGs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_MATHANGs(MATHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.HANGSANXUAT = this;
+		}
+		
+		private void detach_MATHANGs(MATHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.HANGSANXUAT = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADONBANHANG")]
 	public partial class HOADONBANHANG : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2066,9 +2066,9 @@ namespace QLCuaHangDDS.DAO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _MaLoaiMH;
-		
 		private string _TenLoaiMH;
+		
+		private string _MoTa;
 		
 		private EntitySet<MATHANG> _MATHANGs;
 		
@@ -2076,10 +2076,10 @@ namespace QLCuaHangDDS.DAO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaLoaiMHChanging(long value);
-    partial void OnMaLoaiMHChanged();
     partial void OnTenLoaiMHChanging(string value);
     partial void OnTenLoaiMHChanged();
+    partial void OnMoTaChanging(string value);
+    partial void OnMoTaChanged();
     #endregion
 		
 		public LOAIMATHANG()
@@ -2088,27 +2088,7 @@ namespace QLCuaHangDDS.DAO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiMH", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long MaLoaiMH
-		{
-			get
-			{
-				return this._MaLoaiMH;
-			}
-			set
-			{
-				if ((this._MaLoaiMH != value))
-				{
-					this.OnMaLoaiMHChanging(value);
-					this.SendPropertyChanging();
-					this._MaLoaiMH = value;
-					this.SendPropertyChanged("MaLoaiMH");
-					this.OnMaLoaiMHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiMH", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiMH", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string TenLoaiMH
 		{
 			get
@@ -2128,7 +2108,27 @@ namespace QLCuaHangDDS.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIMATHANG_MATHANG", Storage="_MATHANGs", ThisKey="MaLoaiMH", OtherKey="MaLoaiMH")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTa", DbType="NVarChar(MAX)")]
+		public string MoTa
+		{
+			get
+			{
+				return this._MoTa;
+			}
+			set
+			{
+				if ((this._MoTa != value))
+				{
+					this.OnMoTaChanging(value);
+					this.SendPropertyChanging();
+					this._MoTa = value;
+					this.SendPropertyChanged("MoTa");
+					this.OnMoTaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIMATHANG_MATHANG", Storage="_MATHANGs", ThisKey="TenLoaiMH", OtherKey="TenLoaiMH")]
 		public EntitySet<MATHANG> MATHANGs
 		{
 			get
@@ -2182,7 +2182,7 @@ namespace QLCuaHangDDS.DAO
 		
 		private long _MaMH;
 		
-		private System.Nullable<long> _MaLoaiMH;
+		private string _TenLoaiMH;
 		
 		private string _TenMH;
 		
@@ -2200,9 +2200,9 @@ namespace QLCuaHangDDS.DAO
 		
 		private EntitySet<CHITIETHOADONBANHANG> _CHITIETHOADONBANHANGs;
 		
-		private EntityRef<LOAIMATHANG> _LOAIMATHANG;
-		
 		private EntityRef<HANGSANXUAT> _HANGSANXUAT;
+		
+		private EntityRef<LOAIMATHANG> _LOAIMATHANG;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2210,8 +2210,8 @@ namespace QLCuaHangDDS.DAO
     partial void OnCreated();
     partial void OnMaMHChanging(long value);
     partial void OnMaMHChanged();
-    partial void OnMaLoaiMHChanging(System.Nullable<long> value);
-    partial void OnMaLoaiMHChanged();
+    partial void OnTenLoaiMHChanging(string value);
+    partial void OnTenLoaiMHChanged();
     partial void OnTenMHChanging(string value);
     partial void OnTenMHChanged();
     partial void OnDonGiaChanging(System.Nullable<float> value);
@@ -2231,8 +2231,8 @@ namespace QLCuaHangDDS.DAO
 		public MATHANG()
 		{
 			this._CHITIETHOADONBANHANGs = new EntitySet<CHITIETHOADONBANHANG>(new Action<CHITIETHOADONBANHANG>(this.attach_CHITIETHOADONBANHANGs), new Action<CHITIETHOADONBANHANG>(this.detach_CHITIETHOADONBANHANGs));
-			this._LOAIMATHANG = default(EntityRef<LOAIMATHANG>);
 			this._HANGSANXUAT = default(EntityRef<HANGSANXUAT>);
+			this._LOAIMATHANG = default(EntityRef<LOAIMATHANG>);
 			OnCreated();
 		}
 		
@@ -2256,26 +2256,26 @@ namespace QLCuaHangDDS.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiMH", DbType="BigInt")]
-		public System.Nullable<long> MaLoaiMH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiMH", DbType="NVarChar(50)")]
+		public string TenLoaiMH
 		{
 			get
 			{
-				return this._MaLoaiMH;
+				return this._TenLoaiMH;
 			}
 			set
 			{
-				if ((this._MaLoaiMH != value))
+				if ((this._TenLoaiMH != value))
 				{
 					if (this._LOAIMATHANG.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnMaLoaiMHChanging(value);
+					this.OnTenLoaiMHChanging(value);
 					this.SendPropertyChanging();
-					this._MaLoaiMH = value;
-					this.SendPropertyChanged("MaLoaiMH");
-					this.OnMaLoaiMHChanged();
+					this._TenLoaiMH = value;
+					this.SendPropertyChanged("TenLoaiMH");
+					this.OnTenLoaiMHChanged();
 				}
 			}
 		}
@@ -2437,40 +2437,6 @@ namespace QLCuaHangDDS.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIMATHANG_MATHANG", Storage="_LOAIMATHANG", ThisKey="MaLoaiMH", OtherKey="MaLoaiMH", IsForeignKey=true)]
-		public LOAIMATHANG LOAIMATHANG
-		{
-			get
-			{
-				return this._LOAIMATHANG.Entity;
-			}
-			set
-			{
-				LOAIMATHANG previousValue = this._LOAIMATHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._LOAIMATHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LOAIMATHANG.Entity = null;
-						previousValue.MATHANGs.Remove(this);
-					}
-					this._LOAIMATHANG.Entity = value;
-					if ((value != null))
-					{
-						value.MATHANGs.Add(this);
-						this._MaLoaiMH = value.MaLoaiMH;
-					}
-					else
-					{
-						this._MaLoaiMH = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("LOAIMATHANG");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HANGSANXUAT_MATHANG", Storage="_HANGSANXUAT", ThisKey="TenHangSX", OtherKey="TenHangSX", IsForeignKey=true)]
 		public HANGSANXUAT HANGSANXUAT
 		{
@@ -2501,6 +2467,40 @@ namespace QLCuaHangDDS.DAO
 						this._TenHangSX = default(string);
 					}
 					this.SendPropertyChanged("HANGSANXUAT");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIMATHANG_MATHANG", Storage="_LOAIMATHANG", ThisKey="TenLoaiMH", OtherKey="TenLoaiMH", IsForeignKey=true)]
+		public LOAIMATHANG LOAIMATHANG
+		{
+			get
+			{
+				return this._LOAIMATHANG.Entity;
+			}
+			set
+			{
+				LOAIMATHANG previousValue = this._LOAIMATHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAIMATHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAIMATHANG.Entity = null;
+						previousValue.MATHANGs.Remove(this);
+					}
+					this._LOAIMATHANG.Entity = value;
+					if ((value != null))
+					{
+						value.MATHANGs.Add(this);
+						this._TenLoaiMH = value.TenLoaiMH;
+					}
+					else
+					{
+						this._TenLoaiMH = default(string);
+					}
+					this.SendPropertyChanged("LOAIMATHANG");
 				}
 			}
 		}

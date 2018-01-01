@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QLCuaHangDDS.GUI.ManHinhBanHang;
 using QLCuaHangDDS.GUI.ManHinhHangHoa;
 using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
+using QLCuaHangDDS.GUI.ManHinhPhanLoai;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -68,6 +69,21 @@ namespace QLCuaHangDDS.GUI
             if (frm == null)
             {
                 HangSanXuat forms = new HangSanXuat();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btn_PhanLoai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(ThongTinPhanLoai));
+            if (frm == null)
+            {
+                ThongTinPhanLoai forms = new ThongTinPhanLoai();
                 forms.MdiParent = this;
                 forms.Show();
             }

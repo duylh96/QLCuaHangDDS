@@ -98,6 +98,7 @@
             this.btn_PhanLoai.ImageOptions.Image = global::QLCuaHangDDS.Properties.Resources._001_resume;
             this.btn_PhanLoai.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources._001_resume;
             this.btn_PhanLoai.Name = "btn_PhanLoai";
+            this.btn_PhanLoai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhanLoai_ItemClick);
             // 
             // btn_HangSanXuat
             // 
