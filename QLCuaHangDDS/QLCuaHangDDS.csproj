@@ -68,8 +68,10 @@
   <ItemGroup>
     <Compile Include="BUS\HangSanXuatBUS.cs" />
     <Compile Include="BUS\LoaiMatHangBUS.cs" />
+    <Compile Include="BUS\MatHangBUS.cs" />
     <Compile Include="DAO\HangSanXuatDAO.cs" />
     <Compile Include="DAO\LoaiMatHangDAO.cs" />
+    <Compile Include="DAO\MatHangDAO.cs" />
     <Compile Include="DAO\QLCuaHangDDSDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,9 +171,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\ManHinhNhapHang\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Icon\009-laptop.png" />
   </ItemGroup>
