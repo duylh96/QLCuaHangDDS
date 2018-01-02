@@ -51,7 +51,21 @@ namespace QLCuaHangDDS.DAO
 
         public static bool XoaLoaiMatHang(String tenLmh)
         {
-            return true;
+            QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
+            LOAIMATHANG q = db.LOAIMATHANGs.Single(p => p.TenLoaiMH == tenLmh);
+            db.LOAIMATHANGs.DeleteOnSubmit(q);
+
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                XtraMessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
     }
 }

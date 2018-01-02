@@ -33,7 +33,7 @@ namespace QLCuaHangDDS.BUS
 
         public static bool XoaLoaiMatHang(String tenLmh)
         {
-            return true;
+            return LoaiMatHangDAO.XoaLoaiMatHang(tenLmh);
         }
     }
 }

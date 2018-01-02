@@ -28,6 +28,8 @@ namespace QLCuaHangDDS.GUI.ManHinhPhanLoai
         private void RefreshData()
         {
             gridControl1.DataSource = new QLCuaHangDDSDBDataContext().LOAIMATHANGs;
+            this.btn_sua.Enabled = false;
+            this.btn_xoa.Enabled = false;
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -70,7 +72,17 @@ namespace QLCuaHangDDS.GUI.ManHinhPhanLoai
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-
+            if (LoaiMatHangBUS.XoaLoaiMatHang(this.currentTenLmh))
+            {
+                XtraMessageBox.Show("Xóa thành công!", "Succeed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.RefreshData();
+                return;
+            }
+            else
+            {
+                XtraMessageBox.Show("Xóa thất bại!", "Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
