@@ -317,3 +317,8 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+# DBLinQ
+/QLCuaHangDDS/DAO/QLCuaHangDDSDB.dbml
+/QLCuaHangDDS/DAO/QLCuaHangDDSDB.dbml.layout
+/QLCuaHangDDS/DAO/QLCuaHangDDSDB.designer.cs
