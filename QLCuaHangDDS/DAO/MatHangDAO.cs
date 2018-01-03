@@ -1,9 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCuaHangDDS.DAO
@@ -29,6 +28,32 @@ namespace QLCuaHangDDS.DAO
         {
             QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
             db.MATHANGs.InsertOnSubmit(mh);
+
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                XtraMessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public static bool SuaMatHang(int id, MATHANG mh)
+        {
+            QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
+            var q = db.MATHANGs.Single(p => p.MaMH == id);
+            q.TenMH = mh.TenMH;
+            q.TenLoaiMH = mh.TenLoaiMH;
+            q.TenHangSX = mh.TenHangSX;
+            q.SoLuong = mh.SoLuong;
+            q.NamSX = mh.NamSX;
+            q.Mota = mh.Mota;
+            q.DonGia = mh.DonGia;
+            q.KinhDoanh = mh.KinhDoanh;
 
             try
             {

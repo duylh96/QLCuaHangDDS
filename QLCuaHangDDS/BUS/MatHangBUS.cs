@@ -1,9 +1,6 @@
-﻿using System;
+﻿using QLCuaHangDDS.DAO;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using QLCuaHangDDS.DAO;
 
 namespace QLCuaHangDDS.BUS
 {
@@ -14,11 +11,11 @@ namespace QLCuaHangDDS.BUS
             return MatHangDAO.LoadDanhSachPhanLoai();
         }
 
-        public static bool isValidNumber(string number)
+        public static bool isValidNumber(object number)
         {
             try
             {
-                int n = int.Parse(number);
+                int n = int.Parse(number.ToString());
                 if (n > 0) return true;
                 return false;
             }
@@ -28,11 +25,11 @@ namespace QLCuaHangDDS.BUS
             }
         }
 
-        public static bool isValidFloat(string number)
+        public static bool isValidFloat(object number)
         {
             try
             {
-                float n = float.Parse(number);
+                float n = float.Parse(number.ToString());
                 if (n > 0) return true;
                 return false;
             }
@@ -45,9 +42,17 @@ namespace QLCuaHangDDS.BUS
         public static bool ThemMatHang(MATHANG mh)
         {
             if (mh.TenMH.Equals("") || mh.TenLoaiMH.Equals("")
-                || mh.TenHangSX.Equals("") || mh.DonGia.Equals(""))
+                || mh.TenHangSX.Equals(""))
                 return false;
             return MatHangDAO.ThemMatHang(mh);
+        }
+
+        public static bool SuaMatHang(int id, MATHANG mh)
+        {
+            if (mh.TenMH.Equals("") || mh.TenLoaiMH.Equals("")
+                || mh.TenHangSX.Equals(""))
+                return false;
+            return MatHangDAO.SuaMatHang(id, mh);
         }
     }
 }

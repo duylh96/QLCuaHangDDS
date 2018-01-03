@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using QLCuaHangDDS.BUS;
 using QLCuaHangDDS.DAO;
+using System;
+using System.Windows.Forms;
 
 namespace QLCuaHangDDS.GUI.ManHinhHangHoa
 {
     public partial class ThongTinHang : Form
     {
+        private int selectedMaMH;
         public ThongTinHang()
         {
             InitializeComponent();
@@ -30,7 +23,7 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
             gridView.Columns[5].Caption = "Năm sản xuất";
             gridView.Columns[6].Caption = "Số lượng";
             gridView.Columns[7].Caption = "Mô tả";
-            gridView.Columns[8].Visible = false;
+            gridView.Columns[8].Caption = "Kinh doanh";
             gridView.Columns[9].Visible = false;
             gridView.Columns[10].Visible = false;
 
@@ -58,7 +51,6 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
         {
             gridControl.DataSource = new QLCuaHangDDS.DAO.QLCuaHangDDSDBDataContext().MATHANGs;
             this.btn_Sua.Enabled = false;
-            this.btn_Xoa.Enabled = false;
             edt_TenMatHang.Text = "";
             edt_SoLuong.Text = "";
             edt_NamSanXuat.Text = "";
@@ -112,6 +104,61 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
             else
             {
                 XtraMessageBox.Show("Thêm thất bại!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void gridView_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            try
+            {
+                this.selectedMaMH = int.Parse(gridView.GetRowCellValue(gridView.FocusedRowHandle, "MaMH").ToString());
+            }
+            catch (Exception) { }
+            this.btn_Sua.Enabled = true;
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            if (!MatHangBUS.isValidNumber(gridView.GetRowCellValue(gridView.FocusedRowHandle, "SoLuong")))
+            {
+                XtraMessageBox.Show("Số lượng không hợp lệ!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!MatHangBUS.isValidNumber(gridView.GetRowCellValue(gridView.FocusedRowHandle, "NamSX")))
+            {
+                XtraMessageBox.Show("Năm không hợp lệ!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!MatHangBUS.isValidFloat(gridView.GetRowCellValue(gridView.FocusedRowHandle, "DonGia")))
+            {
+                XtraMessageBox.Show("Đơn giá không hợp lệ!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            MATHANG mh = new MATHANG();
+            mh.TenMH = gridView.GetRowCellValue(gridView.FocusedRowHandle, "TenMH").ToString();
+            mh.TenLoaiMH = gridView.GetRowCellValue(gridView.FocusedRowHandle, "TenLoaiMH").ToString();
+            mh.TenHangSX = gridView.GetRowCellValue(gridView.FocusedRowHandle, "TenHangSX").ToString();
+            mh.NamSX = int.Parse(gridView.GetRowCellValue(gridView.FocusedRowHandle, "NamSX").ToString());
+            mh.SoLuong = int.Parse(gridView.GetRowCellValue(gridView.FocusedRowHandle, "SoLuong").ToString());
+            mh.DonGia = decimal.Parse(gridView.GetRowCellValue(gridView.FocusedRowHandle, "DonGia").ToString());
+            mh.Mota = gridView.GetRowCellValue(gridView.FocusedRowHandle, "Mota").ToString();
+            mh.KinhDoanh = bool.Parse(gridView.GetRowCellValue(gridView.FocusedRowHandle, "KinhDoanh").ToString());
+
+
+            if (MatHangBUS.SuaMatHang(this.selectedMaMH, mh))
+            {
+                XtraMessageBox.Show("Cập nhật thành công!", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.refreshTableData();
+                return;
+            }
+            else
+            {
+                XtraMessageBox.Show("Cập nhật thất bại!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
