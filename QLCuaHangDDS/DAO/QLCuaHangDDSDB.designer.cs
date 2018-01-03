@@ -2186,11 +2186,11 @@ namespace QLCuaHangDDS.DAO
 		
 		private string _TenMH;
 		
-		private System.Nullable<float> _DonGia;
+		private System.Nullable<decimal> _DonGia;
 		
 		private string _TenHangSX;
 		
-		private string _NamSX;
+		private System.Nullable<int> _NamSX;
 		
 		private System.Nullable<int> _SoLuong;
 		
@@ -2214,11 +2214,11 @@ namespace QLCuaHangDDS.DAO
     partial void OnTenLoaiMHChanged();
     partial void OnTenMHChanging(string value);
     partial void OnTenMHChanged();
-    partial void OnDonGiaChanging(System.Nullable<float> value);
+    partial void OnDonGiaChanging(System.Nullable<decimal> value);
     partial void OnDonGiaChanged();
     partial void OnTenHangSXChanging(string value);
     partial void OnTenHangSXChanged();
-    partial void OnNamSXChanging(string value);
+    partial void OnNamSXChanging(System.Nullable<int> value);
     partial void OnNamSXChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
@@ -2300,8 +2300,8 @@ namespace QLCuaHangDDS.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Real")]
-		public System.Nullable<float> DonGia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Money")]
+		public System.Nullable<decimal> DonGia
 		{
 			get
 			{
@@ -2344,8 +2344,8 @@ namespace QLCuaHangDDS.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamSX", DbType="NVarChar(10)")]
-		public string NamSX
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NamSX", DbType="Int")]
+		public System.Nullable<int> NamSX
 		{
 			get
 			{

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinHang));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.edt_SoLuong = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Dong = new DevExpress.XtraEditors.SimpleButton();
@@ -74,10 +75,10 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.edt_SoLuong = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_SoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_DonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_NamSanXuat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_TenMatHang.Properties)).BeginInit();
@@ -115,7 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_SoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +143,14 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // edt_SoLuong
+            // 
+            this.edt_SoLuong.Location = new System.Drawing.Point(767, 86);
+            this.edt_SoLuong.Name = "edt_SoLuong";
+            this.edt_SoLuong.Size = new System.Drawing.Size(100, 20);
+            this.edt_SoLuong.StyleController = this.layoutControl1;
+            this.edt_SoLuong.TabIndex = 24;
+            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -158,6 +166,7 @@
             // 
             // btn_Xoa
             // 
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
             this.btn_Xoa.Location = new System.Drawing.Point(711, 447);
             this.btn_Xoa.Name = "btn_Xoa";
@@ -179,6 +188,7 @@
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Enabled = false;
             this.btn_Sua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Sua.ImageOptions.Image")));
             this.btn_Sua.Location = new System.Drawing.Point(631, 447);
             this.btn_Sua.Name = "btn_Sua";
@@ -255,6 +265,7 @@
             // 
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
+            this.gridView.OptionsFind.AlwaysVisible = true;
             // 
             // cbb_PhanLoai
             // 
@@ -567,14 +578,6 @@
             this.emptySpaceItem10.Size = new System.Drawing.Size(309, 10);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // edt_SoLuong
-            // 
-            this.edt_SoLuong.Location = new System.Drawing.Point(767, 86);
-            this.edt_SoLuong.Name = "edt_SoLuong";
-            this.edt_SoLuong.Size = new System.Drawing.Size(100, 20);
-            this.edt_SoLuong.StyleController = this.layoutControl1;
-            this.edt_SoLuong.TabIndex = 24;
-            // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.edt_SoLuong;
@@ -594,6 +597,7 @@
             this.Text = "THÔNG TIN HÀNG HÓA";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.edt_SoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_DonGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_NamSanXuat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_TenMatHang.Properties)).EndInit();
@@ -631,7 +635,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_SoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 

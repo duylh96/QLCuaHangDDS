@@ -107,9 +107,9 @@
       <Column Name="MaMH" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLoaiMH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TenMH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DonGia" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="TenHangSX" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NamSX" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NamSX" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Mota" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="KinhDoanh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />

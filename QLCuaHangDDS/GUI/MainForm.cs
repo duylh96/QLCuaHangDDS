@@ -33,6 +33,15 @@ namespace QLCuaHangDDS.GUI
             return null;
         }
 
+        private ThongTinHang GetThongTinHang()
+        {
+            foreach (ThongTinHang f in this.MdiChildren)
+            {
+                return f;
+            }
+            return null;
+        }
+
         private void btn_BanHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = kiemtraform(typeof(BanHang));
@@ -56,11 +65,18 @@ namespace QLCuaHangDDS.GUI
                 ThongTinHang forms = new ThongTinHang();
                 forms.MdiParent = this;
                 forms.Show();
+                forms.Activated += onManHinhThongTinHangActivated;
             }
             else
             {
                 frm.Activate();
             }
+        }
+
+        private void onManHinhThongTinHangActivated(object sender, EventArgs e)
+        {
+            ThongTinHang frm = GetThongTinHang();
+            frm.updateExternalBind();
         }
 
         private void btn_HangSanXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

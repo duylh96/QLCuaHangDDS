@@ -30,6 +30,8 @@ namespace QLCuaHangDDS.GUI.ManHinhPhanLoai
             gridControl1.DataSource = new QLCuaHangDDSDBDataContext().LOAIMATHANGs;
             this.btn_sua.Enabled = false;
             this.btn_xoa.Enabled = false;
+            this.edt_tenLmh.Text = "";
+            this.edt_moTa.Text = "";
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
