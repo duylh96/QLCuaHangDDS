@@ -319,6 +319,5 @@ ASALocalRun/
 *.binlog
 
 # DBLinQ
-/QLCuaHangDDS/DAO/QLCuaHangDDSDB.dbml
-/QLCuaHangDDS/DAO/QLCuaHangDDSDB.dbml.layout
-/QLCuaHangDDS/DAO/QLCuaHangDDSDB.designer.cs
+QLCuaHangDDSDB.*
+QLCuaHangDDSDataSet.*
