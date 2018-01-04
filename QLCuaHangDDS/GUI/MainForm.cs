@@ -11,7 +11,6 @@ using QLCuaHangDDS.GUI.ManHinhBanHang;
 using QLCuaHangDDS.GUI.ManHinhHangHoa;
 using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 using QLCuaHangDDS.GUI.ManHinhPhanLoai;
-using QLCuaHangDDS.GUI.ManHinhDichVu;
 namespace QLCuaHangDDS.GUI
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
@@ -100,21 +99,6 @@ namespace QLCuaHangDDS.GUI
             if (frm == null)
             {
                 ThongTinPhanLoai forms = new ThongTinPhanLoai();
-                forms.MdiParent = this;
-                forms.Show();
-            }
-            else
-            {
-                frm.Activate();
-            }
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form frm = kiemtraform(typeof(DichVu));
-            if (frm == null)
-            {
-                DichVu forms = new DichVu();
                 forms.MdiParent = this;
                 forms.Show();
             }
