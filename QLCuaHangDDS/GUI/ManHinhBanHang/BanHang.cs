@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QLCuaHangDDS.GUI.ManHinhBanHang
 {
-    public partial class BanHang : Form
+    public partial class BanHang : DevExpress.XtraEditors.XtraForm
     {
         public BanHang()
         {
