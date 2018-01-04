@@ -1,4 +1,4 @@
-﻿namespace QLCuaHangDDS.GUI
+namespace QLCuaHangDDS.GUI
 {
     partial class MainForm
     {
@@ -35,6 +35,7 @@
             this.btn_HangHoa = new DevExpress.XtraBars.BarButtonItem();
             this.btn_PhanLoai = new DevExpress.XtraBars.BarButtonItem();
             this.btn_HangSanXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDV = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,9 +60,10 @@
             this.btn_BanHang,
             this.btn_HangHoa,
             this.btn_PhanLoai,
-            this.btn_HangSanXuat});
+            this.btn_HangSanXuat,
+            this.btnDV});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -109,6 +111,15 @@
             this.btn_HangSanXuat.Name = "btn_HangSanXuat";
             this.btn_HangSanXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HangSanXuat_ItemClick);
             // 
+            // btnDV
+            // 
+            this.btnDV.Caption = "Dịch Vụ";
+            this.btnDV.Id = 14;
+            this.btnDV.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btnDV.ImageOptions.LargeImage = global::QLCuaHangDDS.Properties.Resources.service_icon;
+            this.btnDV.Name = "btnDV";
+            this.btnDV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -141,8 +152,8 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnDV);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Dịch vụ";
             // 
             // ribbonPageGroup4
             // 
@@ -218,5 +229,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_HangHoa;
         private DevExpress.XtraBars.BarButtonItem btn_PhanLoai;
         private DevExpress.XtraBars.BarButtonItem btn_HangSanXuat;
+        private DevExpress.XtraBars.BarButtonItem btnDV;
     }
 }
