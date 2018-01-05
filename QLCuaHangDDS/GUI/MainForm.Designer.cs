@@ -48,6 +48,7 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btn_BangSuaChua = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -61,9 +62,10 @@
             this.btn_HangHoa,
             this.btn_PhanLoai,
             this.btn_HangSanXuat,
-            this.btnDV});
+            this.btnDV,
+            this.btn_BangSuaChua});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 15;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -157,6 +159,7 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_BangSuaChua);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Sửa chữa";
             // 
@@ -192,6 +195,15 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btn_BangSuaChua
+            // 
+            this.btn_BangSuaChua.Caption = "Bảng sửa chữa";
+            this.btn_BangSuaChua.Id = 15;
+            this.btn_BangSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_BangSuaChua.ImageOptions.Image")));
+            this.btn_BangSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_BangSuaChua.ImageOptions.LargeImage")));
+            this.btn_BangSuaChua.Name = "btn_BangSuaChua";
+            this.btn_BangSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BangSuaChua_ItemClick);
             // 
             // MainForm
             // 
@@ -230,5 +242,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_PhanLoai;
         private DevExpress.XtraBars.BarButtonItem btn_HangSanXuat;
         private DevExpress.XtraBars.BarButtonItem btnDV;
+        private DevExpress.XtraBars.BarButtonItem btn_BangSuaChua;
     }
 }

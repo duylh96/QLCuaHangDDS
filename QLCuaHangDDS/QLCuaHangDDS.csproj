@@ -66,10 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BangSuaChuaBUS.cs" />
     <Compile Include="BUS\DichVuBUS.cs" />
     <Compile Include="BUS\HangSanXuatBUS.cs" />
     <Compile Include="BUS\LoaiMatHangBUS.cs" />
     <Compile Include="BUS\MatHangBUS.cs" />
+    <Compile Include="DAO\BangSuaChuaDAO.cs" />
     <Compile Include="DAO\DichVuDAO.cs" />
     <Compile Include="DAO\HangSanXuatDAO.cs" />
     <Compile Include="DAO\LoaiMatHangDAO.cs" />
@@ -84,6 +86,12 @@
     </Compile>
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhBangSuaChua\BangSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhBangSuaChua\BangSuaChua.Designer.cs">
+      <DependentUpon>BangSuaChua.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManHinhBanHang\BanHang.cs">
       <SubType>Form</SubType>
@@ -139,10 +147,19 @@
     <Compile Include="GUI\ManHinhPhanLoai\ThongTinPhanLoai.Designer.cs">
       <DependentUpon>ThongTinPhanLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManHinhPhieuHen\BangPhieuHen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhPhieuHen\BangPhieuHen.Designer.cs">
+      <DependentUpon>BangPhieuHen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManHinhBangSuaChua\BangSuaChua.resx">
+      <DependentUpon>BangSuaChua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhBanHang\BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
@@ -170,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhPhanLoai\ThongTinPhanLoai.resx">
       <DependentUpon>ThongTinPhanLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManHinhPhieuHen\BangPhieuHen.resx">
+      <DependentUpon>BangPhieuHen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

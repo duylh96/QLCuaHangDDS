@@ -108,16 +108,6 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
             }
         }
 
-        private void gridView_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            try
-            {
-                this.selectedMaMH = int.Parse(gridView.GetRowCellValue(gridView.FocusedRowHandle, "MaMH").ToString());
-            }
-            catch (Exception) { }
-            this.btn_Sua.Enabled = true;
-        }
-
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             if (!MatHangBUS.isValidNumber(gridView.GetRowCellValue(gridView.FocusedRowHandle, "SoLuong")))
@@ -161,6 +151,16 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
                 XtraMessageBox.Show("Cập nhật thất bại!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            btn_Sua.Enabled = true;
+            try
+            {
+                this.selectedMaMH = int.Parse(gridView.GetFocusedRowCellValue("MaMH").ToString());
+            }
+            catch (Exception) { }
         }
     }
 }

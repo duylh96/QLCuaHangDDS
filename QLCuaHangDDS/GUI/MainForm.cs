@@ -12,6 +12,8 @@ using QLCuaHangDDS.GUI.ManHinhHangHoa;
 using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 using QLCuaHangDDS.GUI.ManHinhPhanLoai;
 using QLCuaHangDDS.GUI.ManHinhDichVu;
+using QLCuaHangDDS.GUI.ManHinhBangSuaChua;
+
 namespace QLCuaHangDDS.GUI
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
@@ -115,6 +117,21 @@ namespace QLCuaHangDDS.GUI
             if (frm == null)
             {
                 DichVu forms = new DichVu();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btn_BangSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(BangSuaChua));
+            if (frm == null)
+            {
+                BangSuaChua forms = new BangSuaChua();
                 forms.MdiParent = this;
                 forms.Show();
             }
