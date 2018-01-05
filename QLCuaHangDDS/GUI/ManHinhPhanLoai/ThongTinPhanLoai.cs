@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraEditors;
 using QLCuaHangDDS.BUS;
 using QLCuaHangDDS.DAO;
-using DevExpress.XtraEditors;
+using System;
+using System.Windows.Forms;
 
 namespace QLCuaHangDDS.GUI.ManHinhPhanLoai
 {
@@ -28,8 +20,6 @@ namespace QLCuaHangDDS.GUI.ManHinhPhanLoai
         private void RefreshData()
         {
             gridControl1.DataSource = new QLCuaHangDDSDBDataContext().LOAIMATHANGs;
-            this.btn_sua.Enabled = false;
-            this.btn_xoa.Enabled = false;
             this.edt_tenLmh.Text = "";
             this.edt_moTa.Text = "";
         }
@@ -87,11 +77,9 @@ namespace QLCuaHangDDS.GUI.ManHinhPhanLoai
             }
         }
 
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            this.currentTenLmh = this.gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TenLoaiMH").ToString();
-            this.btn_sua.Enabled = true;
-            this.btn_xoa.Enabled = true;
+            this.currentTenLmh = gridView1.GetFocusedRowCellValue("TenLoaiMH").ToString();
         }
     }
 }
