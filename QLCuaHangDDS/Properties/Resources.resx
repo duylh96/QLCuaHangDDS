@@ -121,13 +121,16 @@
   <data name="009-laptop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\009-laptop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="007-laptop-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\007-laptop-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="004-networking" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\004-networking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="001-resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icon\001-resume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="007-laptop-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icon\007-laptop-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="service_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icon\service_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

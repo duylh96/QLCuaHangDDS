@@ -33,5 +33,16 @@ namespace QLCuaHangDDS.Properties {
                 return ((string)(this["QLCuaHangDDSConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVANT;Initial Catalog=QLCuaHangDDS;Persist Security Info=True;User " +
+            "ID=sa;Password=123")]
+        public string QLCuaHangDDSConnectionString1 {
+            get {
+                return ((string)(this["QLCuaHangDDSConnectionString1"]));
+            }
+        }
     }
 }
