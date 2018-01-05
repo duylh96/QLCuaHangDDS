@@ -49,7 +49,7 @@ namespace QLCuaHangDDS.GUI.ManHinhBangSuaChua
 
             if (!BangSuaChuaBUS.isValidFloat(edt_ChiPhiSC.Text.ToString()))
             {
-                XtraMessageBox.Show("Thông tin chi phí không hợp lệ!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Thông tin không hợp lệ!Vui lòng kiểm tra lại", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
