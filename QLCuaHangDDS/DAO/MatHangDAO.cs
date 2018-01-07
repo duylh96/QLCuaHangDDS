@@ -9,6 +9,13 @@ namespace QLCuaHangDDS.DAO
 {
     public class MatHangDAO
     {
+
+        public static MATHANG getMatHangById(long id)
+        {
+            QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
+            return db.MATHANGs.Single(p => p.MaMH == id);
+        }
+
         public static List<string> LoadDanhSachPhanLoai()
         {
             QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
@@ -54,6 +61,25 @@ namespace QLCuaHangDDS.DAO
             q.Mota = mh.Mota;
             q.DonGia = mh.DonGia;
             q.KinhDoanh = mh.KinhDoanh;
+
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                XtraMessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public static bool CapNhatSoLuongMatHang(long id, int sl)
+        {
+            QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
+            var mh = db.MATHANGs.Single(p => p.MaMH == id);
+            mh.SoLuong -= sl;
 
             try
             {

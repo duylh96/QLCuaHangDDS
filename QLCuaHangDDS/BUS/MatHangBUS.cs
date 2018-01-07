@@ -54,5 +54,10 @@ namespace QLCuaHangDDS.BUS
                 return false;
             return MatHangDAO.SuaMatHang(id, mh);
         }
+
+        public static bool CapNhatSoLuongMatHang(long id, int sl)
+        {
+            return MatHangDAO.CapNhatSoLuongMatHang(id, sl);
+        }
     }
 }

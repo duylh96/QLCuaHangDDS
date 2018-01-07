@@ -67,13 +67,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BangSuaChuaBUS.cs" />
+    <Compile Include="BUS\ChiTietHoaDonBanHangBUS.cs" />
     <Compile Include="BUS\DichVuBUS.cs" />
     <Compile Include="BUS\HangSanXuatBUS.cs" />
+    <Compile Include="BUS\HoaDonBanHangBUS.cs" />
     <Compile Include="BUS\LoaiMatHangBUS.cs" />
     <Compile Include="BUS\MatHangBUS.cs" />
     <Compile Include="DAO\BangSuaChuaDAO.cs" />
+    <Compile Include="DAO\ChiTietHoaDonBanHangDAO.cs" />
     <Compile Include="DAO\DichVuDAO.cs" />
     <Compile Include="DAO\HangSanXuatDAO.cs" />
+    <Compile Include="DAO\HoaDonBanHangDAO.cs" />
     <Compile Include="DAO\LoaiMatHangDAO.cs" />
     <Compile Include="DAO\MatHangDAO.cs" />
     <Compile Include="DAO\QLCuaHangDDSDB.designer.cs">
