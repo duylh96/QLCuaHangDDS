@@ -66,11 +66,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\ChiTietHoaDonSuaChuaBUS.cs" />
+    <Compile Include="BUS\HoaDonSuaChuaBUS.cs" />
+    <Compile Include="BUS\PhieuHenBUS.cs" />
     <Compile Include="BUS\BangSuaChuaBUS.cs" />
     <Compile Include="BUS\DichVuBUS.cs" />
     <Compile Include="BUS\HangSanXuatBUS.cs" />
     <Compile Include="BUS\LoaiMatHangBUS.cs" />
     <Compile Include="BUS\MatHangBUS.cs" />
+    <Compile Include="DAO\ChiTietHoaDonSuaChuaDAO.cs" />
+    <Compile Include="DAO\HoaDonSuaChuaDAO.cs" />
+    <Compile Include="DAO\PhieuHenDAO.cs" />
     <Compile Include="DAO\BangSuaChuaDAO.cs" />
     <Compile Include="DAO\DichVuDAO.cs" />
     <Compile Include="DAO\HangSanXuatDAO.cs" />
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="GUI\ManHinhBanHang\BanHang.Designer.cs">
       <DependentUpon>BanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ManHinhChiTietHoaDonSuaChua\ChiTietHoaDonSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhChiTietHoaDonSuaChua\ChiTietHoaDonSuaChua.Designer.cs">
+      <DependentUpon>ChiTietHoaDonSuaChua.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ManHinhDichVu\DichVu.cs">
       <SubType>Form</SubType>
@@ -141,17 +153,23 @@
     <Compile Include="GUI\ManHinhHangSanXuat\ThemMoiHangSanXuat.Designer.cs">
       <DependentUpon>ThemMoiHangSanXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManHinhHoaDonSuaChua\HoaDonSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhHoaDonSuaChua\HoaDonSuaChua.Designer.cs">
+      <DependentUpon>HoaDonSuaChua.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ManHinhPhanLoai\ThongTinPhanLoai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ManHinhPhanLoai\ThongTinPhanLoai.Designer.cs">
       <DependentUpon>ThongTinPhanLoai.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ManHinhPhieuHen\BangPhieuHen.cs">
+    <Compile Include="GUI\ManHinhPhieuHen\PhieuHen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ManHinhPhieuHen\BangPhieuHen.Designer.cs">
-      <DependentUpon>BangPhieuHen.cs</DependentUpon>
+    <Compile Include="GUI\ManHinhPhieuHen\PhieuHen.Designer.cs">
+      <DependentUpon>PhieuHen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhBanHang\BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManHinhChiTietHoaDonSuaChua\ChiTietHoaDonSuaChua.resx">
+      <DependentUpon>ChiTietHoaDonSuaChua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhDichVu\DichVu.resx">
       <DependentUpon>DichVu.cs</DependentUpon>
@@ -190,11 +211,14 @@
     <EmbeddedResource Include="GUI\ManHinhHangSanXuat\ThemMoiHangSanXuat.resx">
       <DependentUpon>ThemMoiHangSanXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManHinhHoaDonSuaChua\HoaDonSuaChua.resx">
+      <DependentUpon>HoaDonSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhPhanLoai\ThongTinPhanLoai.resx">
       <DependentUpon>ThongTinPhanLoai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ManHinhPhieuHen\BangPhieuHen.resx">
-      <DependentUpon>BangPhieuHen.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\ManHinhPhieuHen\PhieuHen.resx">
+      <DependentUpon>PhieuHen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
