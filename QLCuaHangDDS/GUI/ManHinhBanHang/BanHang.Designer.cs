@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BanHang));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.edt_CapNhatSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.edt_TongTien = new DevExpress.XtraEditors.MemoEdit();
             this.btn_ThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Sua = new DevExpress.XtraEditors.SimpleButton();
@@ -73,10 +74,10 @@
             this.emptySpaceItem20 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.edt_CapNhatSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_CapNhatSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_TongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_SoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChiTiet)).BeginInit();
@@ -114,7 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_CapNhatSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,6 +139,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(897, 552);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // edt_CapNhatSoLuong
+            // 
+            this.edt_CapNhatSoLuong.Location = new System.Drawing.Point(723, 397);
+            this.edt_CapNhatSoLuong.Name = "edt_CapNhatSoLuong";
+            this.edt_CapNhatSoLuong.Size = new System.Drawing.Size(95, 20);
+            this.edt_CapNhatSoLuong.StyleController = this.layoutControl1;
+            this.edt_CapNhatSoLuong.TabIndex = 16;
             // 
             // edt_TongTien
             // 
@@ -229,6 +237,7 @@
             this.gridViewChiTiet.Name = "gridViewChiTiet";
             this.gridViewChiTiet.OptionsBehavior.Editable = false;
             this.gridViewChiTiet.OptionsFind.AlwaysVisible = true;
+            this.gridViewChiTiet.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewChiTiet_RowCellClick);
             this.gridViewChiTiet.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewChiTiet_FocusedRowChanged);
             // 
             // gridControlDSMatHang
@@ -563,14 +572,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(35, 44);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // edt_CapNhatSoLuong
-            // 
-            this.edt_CapNhatSoLuong.Location = new System.Drawing.Point(723, 397);
-            this.edt_CapNhatSoLuong.Name = "edt_CapNhatSoLuong";
-            this.edt_CapNhatSoLuong.Size = new System.Drawing.Size(95, 20);
-            this.edt_CapNhatSoLuong.StyleController = this.layoutControl1;
-            this.edt_CapNhatSoLuong.TabIndex = 16;
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.edt_CapNhatSoLuong;
@@ -594,6 +595,7 @@
             this.Text = "BÁN HÀNG";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.edt_CapNhatSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_TongTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_SoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChiTiet)).EndInit();
@@ -631,7 +633,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_CapNhatSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 

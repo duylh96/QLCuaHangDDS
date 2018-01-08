@@ -109,8 +109,11 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
             gridViewChiTiet.Columns[5].Caption = "Đơn giá";
             gridViewChiTiet.Columns[6].Caption = "Thành tiền";
 
+            gridViewChiTiet.FocusedRowHandle = gridViewChiTiet.GetVisibleRowHandle(0);
+
             this.btn_Delete.Enabled = true;
             this.btn_Sua.Enabled = true;
+            edt_CapNhatSoLuong.Text = "";
         }
 
         private void gridViewChiTiet_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -139,6 +142,8 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
             gridViewDSMatHang.Columns[8].Visible = false;
             gridViewDSMatHang.Columns[9].Visible = false;
             gridViewDSMatHang.Columns[10].Visible = false;
+
+            gridViewDSMatHang.FocusedRowHandle = gridViewDSMatHang.GetVisibleRowHandle(0);
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -154,6 +159,7 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
                 HoaDonBanHangBUS.CapNhatTongTienHD(this.currentMaHDBH, -ThanhTien, ref result);
                 MatHangBUS.CapNhatSoLuongMatHang(this.selectedMaMH, -soLuongMua);
                 edt_TongTien.Text = result.ToString();
+                edt_CapNhatSoLuong.Text = "";
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
@@ -170,12 +176,22 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
                 if (!HoaDonBanHangBUS.isValidNumber(SoLuongMua))
                 {
                     XtraMessageBox.Show("Số lượng không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    edt_CapNhatSoLuong.Text = "";
                     return;
                 }
             }
             catch (Exception)
             {
                 XtraMessageBox.Show("Số lượng không hợp lệ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                edt_CapNhatSoLuong.Text = "";
+                return;
+            }
+
+            var selectedMH = MatHangDAO.getMatHangById(this.selectedMaMH);
+            if (SoLuongMua - this.currentSL > selectedMH.SoLuong)
+            {
+                XtraMessageBox.Show("Mặt hàng này hiện tại không đủ số lượng theo yêu cầu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                edt_CapNhatSoLuong.Text = "";
                 return;
             }
 
@@ -184,7 +200,7 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
             ChiTietHoaDonBanHangBUS.CapNhatCTHDBH(this.currentMaCTHD, SoLuongMua, ref deltaSoLuong, ref deltaThanhTien);
 
             decimal result = 0;
-            MatHangBUS.CapNhatSoLuongMatHang(this.currentMaMH, deltaSoLuong);
+            MatHangBUS.CapNhatSoLuongMatHang(this.selectedMaMH, deltaSoLuong);
             HoaDonBanHangBUS.CapNhatTongTienHD(this.currentMaHDBH, deltaThanhTien, ref result);
             edt_TongTien.Text = result.ToString();
 
@@ -205,6 +221,18 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
             edt_CapNhatSoLuong.Text = "";
             edt_SoLuong.Text = "";
             edt_TongTien.Text = "0";
+        }
+
+        private void gridViewChiTiet_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            try
+            {
+                this.currentMaCTHD = long.Parse(gridViewChiTiet.GetFocusedRowCellValue("MaChiTietHD").ToString());
+                this.selectedMaMH = long.Parse(gridViewChiTiet.GetFocusedRowCellValue("MaMH").ToString());
+                this.currentSL = int.Parse(gridViewChiTiet.GetFocusedRowCellValue("SoLuong").ToString());
+                edt_CapNhatSoLuong.Text = this.currentSL.ToString();
+            }
+            catch (Exception) { }
         }
     }
 }
