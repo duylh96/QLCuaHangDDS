@@ -50,11 +50,10 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
         private void refreshTableData()
         {
             gridControl.DataSource = new QLCuaHangDDS.DAO.QLCuaHangDDSDBDataContext().MATHANGs;
-            this.btn_Sua.Enabled = false;
             edt_TenMatHang.Text = "";
             edt_SoLuong.Text = "";
             edt_NamSanXuat.Text = "";
-            edt_MoTa.Text = "";
+            edt_MoTa.Text = "[chưa có]";
             edt_DonGia.Text = "";
             cbb_HangSanXuat.Text = "";
             cbb_PhanLoai.Text = "";
@@ -104,6 +103,7 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
             else
             {
                 XtraMessageBox.Show("Thêm thất bại!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.refreshTableData();
                 return;
             }
         }
@@ -149,13 +149,13 @@ namespace QLCuaHangDDS.GUI.ManHinhHangHoa
             else
             {
                 XtraMessageBox.Show("Cập nhật thất bại!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.refreshTableData();
                 return;
             }
         }
 
         private void gridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            btn_Sua.Enabled = true;
             try
             {
                 this.selectedMaMH = int.Parse(gridView.GetFocusedRowCellValue("MaMH").ToString());

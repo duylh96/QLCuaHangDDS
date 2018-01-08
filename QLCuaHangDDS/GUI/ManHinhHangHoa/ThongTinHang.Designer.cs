@@ -172,7 +172,6 @@
             // 
             // btn_Sua
             // 
-            this.btn_Sua.Enabled = false;
             this.btn_Sua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Sua.ImageOptions.Image")));
             this.btn_Sua.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_Sua.Location = new System.Drawing.Point(598, 447);
