@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using QLCuaHangDDS.GUI.ManHinhBangSuaChua;
 using QLCuaHangDDS.GUI.ManHinhBanHang;
+using QLCuaHangDDS.GUI.ManHinhDichVu;
 using QLCuaHangDDS.GUI.ManHinhHangHoa;
 using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 using QLCuaHangDDS.GUI.ManHinhPhanLoai;
-using QLCuaHangDDS.GUI.ManHinhDichVu;
-using QLCuaHangDDS.GUI.ManHinhBangSuaChua;
+using System;
+using System.Windows.Forms;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -35,11 +28,12 @@ namespace QLCuaHangDDS.GUI
             return null;
         }
 
-        private ThongTinHang GetThongTinHang()
+        private dynamic GetThongTinHang()
         {
-            foreach (ThongTinHang f in this.MdiChildren)
+            foreach (Form f in this.MdiChildren)
             {
-                return f;
+                if (f.GetType() == typeof(ThongTinHang))
+                    return f;
             }
             return null;
         }
@@ -77,7 +71,7 @@ namespace QLCuaHangDDS.GUI
 
         private void onManHinhThongTinHangActivated(object sender, EventArgs e)
         {
-            ThongTinHang frm = GetThongTinHang();
+            dynamic frm = GetThongTinHang();
             frm.updateExternalBind();
         }
 
