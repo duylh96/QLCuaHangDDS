@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.BangSuaChua_table = new DevExpress.XtraGrid.GridControl();
             this.BangSuaChua_gv = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,6 +51,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BangSuaChua_table)).BeginInit();
@@ -70,10 +72,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btn_Xoa);
             this.layoutControl1.Controls.Add(this.btn_Sua);
             this.layoutControl1.Controls.Add(this.BangSuaChua_table);
             this.layoutControl1.Controls.Add(this.btn_Them);
@@ -88,12 +92,23 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.Enabled = false;
+            this.btn_Xoa.Location = new System.Drawing.Point(492, 309);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(54, 22);
+            this.btn_Xoa.StyleController = this.layoutControl1;
+            this.btn_Xoa.TabIndex = 11;
+            this.btn_Xoa.Text = "Xoá";
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
             // btn_Sua
             // 
             this.btn_Sua.Enabled = false;
-            this.btn_Sua.Location = new System.Drawing.Point(437, 300);
+            this.btn_Sua.Location = new System.Drawing.Point(437, 309);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(51, 31);
+            this.btn_Sua.Size = new System.Drawing.Size(51, 22);
             this.btn_Sua.TabIndex = 10;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
@@ -105,7 +120,7 @@
             this.BangSuaChua_table.Location = new System.Drawing.Point(12, 62);
             this.BangSuaChua_table.MainView = this.BangSuaChua_gv;
             this.BangSuaChua_table.Name = "BangSuaChua_table";
-            this.BangSuaChua_table.Size = new System.Drawing.Size(623, 234);
+            this.BangSuaChua_table.Size = new System.Drawing.Size(623, 243);
             this.BangSuaChua_table.TabIndex = 9;
             this.BangSuaChua_table.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.BangSuaChua_gv});
@@ -114,6 +129,7 @@
             // 
             this.BangSuaChua_gv.GridControl = this.BangSuaChua_table;
             this.BangSuaChua_gv.Name = "BangSuaChua_gv";
+            this.BangSuaChua_gv.OptionsFind.AlwaysVisible = true;
             this.BangSuaChua_gv.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView_RowClick);
             this.BangSuaChua_gv.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.BangSuaChua_gv_FocusedRowChanged);
             // 
@@ -169,7 +185,8 @@
             this.emptySpaceItem6,
             this.layoutControlItem6,
             this.emptySpaceItem1,
-            this.emptySpaceItem7});
+            this.emptySpaceItem7,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(647, 362);
             this.layoutControlGroup1.TextVisible = false;
@@ -231,16 +248,16 @@
             this.layoutControlItem3.Control = this.BangSuaChua_table;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(627, 238);
+            this.layoutControlItem3.Size = new System.Drawing.Size(627, 247);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 288);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 297);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(425, 35);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(425, 26);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
@@ -262,18 +279,18 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btn_Sua;
-            this.layoutControlItem6.Location = new System.Drawing.Point(425, 288);
+            this.layoutControlItem6.Location = new System.Drawing.Point(425, 297);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(55, 35);
+            this.layoutControlItem6.Size = new System.Drawing.Size(55, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(480, 288);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(538, 297);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(147, 35);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(89, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem7
@@ -284,6 +301,15 @@
             this.emptySpaceItem7.Size = new System.Drawing.Size(627, 19);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.btn_Xoa;
+            this.layoutControlItem7.Location = new System.Drawing.Point(480, 297);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(58, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
             // BangSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(647, 362);
             this.Controls.Add(this.layoutControl1);
             this.Name = "BangSuaChua";
-            this.Text = "BangSuaChua";
+            this.Text = "Bảng Sửa Chữa";
             this.Load += new System.EventHandler(this.BangSuaChua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -313,6 +339,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,5 +368,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
+        private DevExpress.XtraEditors.SimpleButton btn_Xoa;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

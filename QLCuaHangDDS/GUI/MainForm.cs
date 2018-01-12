@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,10 @@ using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 using QLCuaHangDDS.GUI.ManHinhPhanLoai;
 using QLCuaHangDDS.GUI.ManHinhDichVu;
 using QLCuaHangDDS.GUI.ManHinhBangSuaChua;
+using QLCuaHangDDS.GUI.ManHinhPhieuHen;
+using QLCuaHangDDS.GUI.ManHinhHoaDonSuaChua;
+using QLCuaHangDDS.GUI.ManHinhChiTietHoaDonSuaChua;
+using QLCuaHangDDS.GUI.ManHinhHoaDonSuaChua1;
 
 namespace QLCuaHangDDS.GUI
 {
@@ -134,11 +139,108 @@ namespace QLCuaHangDDS.GUI
                 BangSuaChua forms = new BangSuaChua();
                 forms.MdiParent = this;
                 forms.Show();
+                //forms.Activated += onManHinhPhieuHenActivated;
             }
             else
             {
                 frm.Activate();
             }
+        }
+        private void onManHinhPhieuHenActivated(object sender, EventArgs e)
+        {
+            PhieuHen frm = GetThongTinPhieuHen();
+           frm.updateExternalBind();
+
+        }
+       
+        private dynamic GetThongTinPhieuHen()
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PhieuHen))
+
+                    return f;
+            }
+            return null;
+        }
+
+        private void btn_PhieuHen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(PhieuHen));
+            if (frm == null)
+            {
+                PhieuHen forms = new PhieuHen();
+                forms.MdiParent = this;
+                forms.Show();
+                forms.Activated += onManHinhPhieuHenActivated;
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btn_HoaDonSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(HoaDonSuaChua));
+            if (frm == null)
+            {
+                HoaDonSuaChua forms = new HoaDonSuaChua();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btn_ChiTietHoaDonSuaChua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(ManHinhChiTietHoaDonSuaChua.ManHinhHoaDonSuaChua1));
+            if (frm == null)
+            {
+                ManHinhChiTietHoaDonSuaChua.ManHinhHoaDonSuaChua1 forms = new ManHinhChiTietHoaDonSuaChua.ManHinhHoaDonSuaChua1();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btn_HoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(HoaDonSuaChua1));
+            if (frm == null)
+            {
+                HoaDonSuaChua1 forms = new HoaDonSuaChua1();
+                forms.MdiParent = this;
+                forms.Show();
+                forms.Activated += onManHinhHoaDonActivated;
+
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+        private void onManHinhHoaDonActivated(object sender, EventArgs e)
+        {
+            dynamic frm = GetThongTinHoaDonSuaChua();
+            frm.updateExternalBind();
+        }
+
+        private dynamic GetThongTinHoaDonSuaChua()
+        {
+            foreach (Form  f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(HoaDonSuaChua1))
+          
+                return f;
+            }
+            return null;
         }
     }
 }

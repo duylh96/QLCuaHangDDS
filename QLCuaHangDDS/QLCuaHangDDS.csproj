@@ -54,6 +54,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -157,6 +158,12 @@
     <Compile Include="GUI\ManHinhHangSanXuat\ThemMoiHangSanXuat.Designer.cs">
       <DependentUpon>ThemMoiHangSanXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManHinhHoaDonSuaChua1\HoaDonSuaChua1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhHoaDonSuaChua1\HoaDonSuaChua1.Designer.cs">
+      <DependentUpon>HoaDonSuaChua1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ManHinhHoaDonSuaChua\HoaDonSuaChua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhHangSanXuat\ThemMoiHangSanXuat.resx">
       <DependentUpon>ThemMoiHangSanXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManHinhHoaDonSuaChua1\HoaDonSuaChua1.resx">
+      <DependentUpon>HoaDonSuaChua1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ManHinhHoaDonSuaChua\HoaDonSuaChua.resx">
       <DependentUpon>HoaDonSuaChua.cs</DependentUpon>

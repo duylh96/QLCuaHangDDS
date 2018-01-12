@@ -36,6 +36,10 @@
             this.btn_PhanLoai = new DevExpress.XtraBars.BarButtonItem();
             this.btn_HangSanXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDV = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_BangSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PhieuHen = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_HoaDonSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ChiTietHoaDonSuaChua = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -48,7 +52,8 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btn_BangSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_HoaDon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -63,9 +68,13 @@
             this.btn_PhanLoai,
             this.btn_HangSanXuat,
             this.btnDV,
-            this.btn_BangSuaChua});
+            this.btn_BangSuaChua,
+            this.btn_PhieuHen,
+            this.btn_HoaDonSuaChua,
+            this.btn_ChiTietHoaDonSuaChua,
+            this.btn_HoaDon});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -122,6 +131,41 @@
             this.btnDV.Name = "btnDV";
             this.btnDV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // btn_BangSuaChua
+            // 
+            this.btn_BangSuaChua.Caption = "Bảng sửa chữa";
+            this.btn_BangSuaChua.Id = 15;
+            this.btn_BangSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_BangSuaChua.ImageOptions.Image")));
+            this.btn_BangSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_BangSuaChua.ImageOptions.LargeImage")));
+            this.btn_BangSuaChua.Name = "btn_BangSuaChua";
+            this.btn_BangSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BangSuaChua_ItemClick);
+            // 
+            // btn_PhieuHen
+            // 
+            this.btn_PhieuHen.Caption = "Phiếu Hẹn";
+            this.btn_PhieuHen.Id = 16;
+            this.btn_PhieuHen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PhieuHen.ImageOptions.LargeImage")));
+            this.btn_PhieuHen.Name = "btn_PhieuHen";
+            this.btn_PhieuHen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PhieuHen_ItemClick);
+            // 
+            // btn_HoaDonSuaChua
+            // 
+            this.btn_HoaDonSuaChua.Caption = "Hoá Đơn Sửa Chữa";
+            this.btn_HoaDonSuaChua.Id = 17;
+            this.btn_HoaDonSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDonSuaChua.ImageOptions.Image")));
+            this.btn_HoaDonSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_HoaDonSuaChua.ImageOptions.LargeImage")));
+            this.btn_HoaDonSuaChua.Name = "btn_HoaDonSuaChua";
+            this.btn_HoaDonSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HoaDonSuaChua_ItemClick);
+            // 
+            // btn_ChiTietHoaDonSuaChua
+            // 
+            this.btn_ChiTietHoaDonSuaChua.Caption = "Chi Tiết Hoá Đơn Sửa Chữa";
+            this.btn_ChiTietHoaDonSuaChua.Id = 19;
+            this.btn_ChiTietHoaDonSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChiTietHoaDonSuaChua.ImageOptions.Image")));
+            this.btn_ChiTietHoaDonSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ChiTietHoaDonSuaChua.ImageOptions.LargeImage")));
+            this.btn_ChiTietHoaDonSuaChua.Name = "btn_ChiTietHoaDonSuaChua";
+            this.btn_ChiTietHoaDonSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChiTietHoaDonSuaChua_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -148,7 +192,8 @@
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup7});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Nghiệp vụ hỗ trợ";
             // 
@@ -160,6 +205,9 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_BangSuaChua);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_PhieuHen);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_HoaDonSuaChua);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_ChiTietHoaDonSuaChua);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Sửa chữa";
             // 
@@ -196,14 +244,20 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // btn_BangSuaChua
+            // ribbonPageGroup7
             // 
-            this.btn_BangSuaChua.Caption = "Bảng sửa chữa";
-            this.btn_BangSuaChua.Id = 15;
-            this.btn_BangSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_BangSuaChua.ImageOptions.Image")));
-            this.btn_BangSuaChua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_BangSuaChua.ImageOptions.LargeImage")));
-            this.btn_BangSuaChua.Name = "btn_BangSuaChua";
-            this.btn_BangSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BangSuaChua_ItemClick);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_HoaDon);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Hoá Đơn";
+            // 
+            // btn_HoaDon
+            // 
+            this.btn_HoaDon.Caption = "Lập Hoá Đơn";
+            this.btn_HoaDon.Id = 20;
+            this.btn_HoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.ImageOptions.Image")));
+            this.btn_HoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.ImageOptions.LargeImage")));
+            this.btn_HoaDon.Name = "btn_HoaDon";
+            this.btn_HoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HoaDon_ItemClick);
             // 
             // MainForm
             // 
@@ -243,5 +297,10 @@
         private DevExpress.XtraBars.BarButtonItem btn_HangSanXuat;
         private DevExpress.XtraBars.BarButtonItem btnDV;
         private DevExpress.XtraBars.BarButtonItem btn_BangSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btn_PhieuHen;
+        private DevExpress.XtraBars.BarButtonItem btn_HoaDonSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btn_ChiTietHoaDonSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btn_HoaDon;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }
