@@ -37,9 +37,12 @@
             this.btn_HangSanXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDV = new DevExpress.XtraBars.BarButtonItem();
             this.btn_BangSuaChua = new DevExpress.XtraBars.BarButtonItem();
+<<<<<<< HEAD
             this.btn_PhieuHen = new DevExpress.XtraBars.BarButtonItem();
             this.btn_HoaDonSuaChua = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ChiTietHoaDonSuaChua = new DevExpress.XtraBars.BarButtonItem();
+=======
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,7 +56,11 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+<<<<<<< HEAD
             this.btn_HoaDon = new DevExpress.XtraBars.BarButtonItem();
+=======
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -69,12 +76,18 @@
             this.btn_HangSanXuat,
             this.btnDV,
             this.btn_BangSuaChua,
+<<<<<<< HEAD
             this.btn_PhieuHen,
             this.btn_HoaDonSuaChua,
             this.btn_ChiTietHoaDonSuaChua,
             this.btn_HoaDon});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 21;
+=======
+            this.skinRibbonGalleryBarItem1});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 19;
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -140,6 +153,7 @@
             this.btn_BangSuaChua.Name = "btn_BangSuaChua";
             this.btn_BangSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BangSuaChua_ItemClick);
             // 
+<<<<<<< HEAD
             // btn_PhieuHen
             // 
             this.btn_PhieuHen.Caption = "Phiếu Hẹn";
@@ -166,6 +180,8 @@
             this.btn_ChiTietHoaDonSuaChua.Name = "btn_ChiTietHoaDonSuaChua";
             this.btn_ChiTietHoaDonSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChiTietHoaDonSuaChua_ItemClick);
             // 
+=======
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -226,7 +242,8 @@
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup7});
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Thay đổi quy định";
             // 
@@ -246,6 +263,7 @@
             // 
             // ribbonPageGroup7
             // 
+<<<<<<< HEAD
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_HoaDon);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Hoá Đơn";
@@ -258,6 +276,17 @@
             this.btn_HoaDon.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.ImageOptions.LargeImage")));
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HoaDon_ItemClick);
+=======
+            this.ribbonPageGroup7.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Thay đổi Giao diện";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 18;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
             // 
             // MainForm
             // 
@@ -297,10 +326,14 @@
         private DevExpress.XtraBars.BarButtonItem btn_HangSanXuat;
         private DevExpress.XtraBars.BarButtonItem btnDV;
         private DevExpress.XtraBars.BarButtonItem btn_BangSuaChua;
+<<<<<<< HEAD
         private DevExpress.XtraBars.BarButtonItem btn_PhieuHen;
         private DevExpress.XtraBars.BarButtonItem btn_HoaDonSuaChua;
         private DevExpress.XtraBars.BarButtonItem btn_ChiTietHoaDonSuaChua;
         private DevExpress.XtraBars.BarButtonItem btn_HoaDon;
+=======
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }

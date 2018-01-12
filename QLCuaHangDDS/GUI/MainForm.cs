@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,16 +9,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+=======
+using QLCuaHangDDS.GUI.ManHinhBangSuaChua;
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
 using QLCuaHangDDS.GUI.ManHinhBanHang;
+using QLCuaHangDDS.GUI.ManHinhDichVu;
 using QLCuaHangDDS.GUI.ManHinhHangHoa;
 using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 using QLCuaHangDDS.GUI.ManHinhPhanLoai;
+<<<<<<< HEAD
 using QLCuaHangDDS.GUI.ManHinhDichVu;
 using QLCuaHangDDS.GUI.ManHinhBangSuaChua;
 using QLCuaHangDDS.GUI.ManHinhPhieuHen;
 using QLCuaHangDDS.GUI.ManHinhHoaDonSuaChua;
 using QLCuaHangDDS.GUI.ManHinhChiTietHoaDonSuaChua;
 using QLCuaHangDDS.GUI.ManHinhHoaDonSuaChua1;
+=======
+using System;
+using System.Windows.Forms;
+>>>>>>> 0ebda5c128737e4cc7dc8d4a4e5a054d0af1645a
 
 namespace QLCuaHangDDS.GUI
 {
@@ -40,11 +50,12 @@ namespace QLCuaHangDDS.GUI
             return null;
         }
 
-        private ThongTinHang GetThongTinHang()
+        private dynamic GetThongTinHang()
         {
-            foreach (ThongTinHang f in this.MdiChildren)
+            foreach (Form f in this.MdiChildren)
             {
-                return f;
+                if (f.GetType() == typeof(ThongTinHang))
+                    return f;
             }
             return null;
         }
@@ -82,7 +93,7 @@ namespace QLCuaHangDDS.GUI
 
         private void onManHinhThongTinHangActivated(object sender, EventArgs e)
         {
-            ThongTinHang frm = GetThongTinHang();
+            dynamic frm = GetThongTinHang();
             frm.updateExternalBind();
         }
 
