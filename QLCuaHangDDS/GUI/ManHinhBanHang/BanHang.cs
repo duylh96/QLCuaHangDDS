@@ -221,6 +221,8 @@ namespace QLCuaHangDDS.GUI.ManHinhBanHang
             edt_CapNhatSoLuong.Text = "";
             edt_SoLuong.Text = "";
             edt_TongTien.Text = "0";
+
+            BanHangBUS.exportPDF(ChiTietHoaDonBanHangDAO.loadChiTietToDataTable(this.currentMaHDBH));
         }
 
         private void gridViewChiTiet_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)

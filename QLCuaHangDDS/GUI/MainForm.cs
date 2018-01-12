@@ -4,6 +4,7 @@ using QLCuaHangDDS.GUI.ManHinhDichVu;
 using QLCuaHangDDS.GUI.ManHinhHangHoa;
 using QLCuaHangDDS.GUI.ManHinhHangSanXuat;
 using QLCuaHangDDS.GUI.ManHinhPhanLoai;
+using QLCuaHangDDS.GUI.ManHinhTraCuuHoaDonBanHang;
 using System;
 using System.Windows.Forms;
 
@@ -126,6 +127,21 @@ namespace QLCuaHangDDS.GUI
             if (frm == null)
             {
                 BangSuaChua forms = new BangSuaChua();
+                forms.MdiParent = this;
+                forms.Show();
+            }
+            else
+            {
+                frm.Activate();
+            }
+        }
+
+        private void btnTraCuuBanHang_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(TraCuuHoaDonBanHang));
+            if (frm == null)
+            {
+                TraCuuHoaDonBanHang forms = new TraCuuHoaDonBanHang();
                 forms.MdiParent = this;
                 forms.Show();
             }

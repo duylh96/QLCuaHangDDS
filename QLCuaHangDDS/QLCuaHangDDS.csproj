@@ -50,6 +50,9 @@
     <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp">
+      <HintPath>Dependencies\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -68,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BangSuaChuaBUS.cs" />
+    <Compile Include="BUS\BanHangBUS.cs" />
     <Compile Include="BUS\ChiTietHoaDonBanHangBUS.cs" />
     <Compile Include="BUS\DichVuBUS.cs" />
     <Compile Include="BUS\HangSanXuatBUS.cs" />
@@ -158,6 +162,12 @@
     <Compile Include="GUI\ManHinhPhieuHen\BangPhieuHen.Designer.cs">
       <DependentUpon>BangPhieuHen.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ManHinhTraCuuHoaDonBanHang\TraCuuHoaDonBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ManHinhTraCuuHoaDonBanHang\TraCuuHoaDonBanHang.Designer.cs">
+      <DependentUpon>TraCuuHoaDonBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -201,6 +211,9 @@
     <EmbeddedResource Include="GUI\ManHinhPhieuHen\BangPhieuHen.resx">
       <DependentUpon>BangPhieuHen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ManHinhTraCuuHoaDonBanHang\TraCuuHoaDonBanHang.resx">
+      <DependentUpon>TraCuuHoaDonBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -226,7 +239,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dependencies\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Icon\009-laptop.png" />
   </ItemGroup>
