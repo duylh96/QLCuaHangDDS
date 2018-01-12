@@ -26,6 +26,10 @@ namespace QLCuaHangDDS.BUS
             }
             return BangSuaChuaDAO.SuaBangSuaChua(tenbsc, bsc);
         }
+        public static bool XoaBangSuaChua(String tenMHSC)
+        {
+            return BangSuaChuaDAO.XoaBangSuaChua(tenMHSC);
+        }
         public static bool isValidNumber(object number)
         {
             try

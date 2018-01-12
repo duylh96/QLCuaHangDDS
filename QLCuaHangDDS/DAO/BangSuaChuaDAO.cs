@@ -9,6 +9,12 @@ namespace QLCuaHangDDS.DAO
 {
     public class BangSuaChuaDAO
     {
+        public static BANGSUACHUA getMatHangById(string id)
+        {
+            QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
+            return db.BANGSUACHUAs.Single(p => p.TenMHSC == id);
+        }
+
         public static bool ThemBangSuaChua(BANGSUACHUA bsc)
         {
             QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
@@ -48,7 +54,24 @@ namespace QLCuaHangDDS.DAO
                 return false;
             }
         }
+        public static bool XoaBangSuaChua(String tenMHSC)
+        {
+            QLCuaHangDDSDBDataContext db = new QLCuaHangDDSDBDataContext();
+            BANGSUACHUA q = db.BANGSUACHUAs.Single(p => p.TenMHSC == tenMHSC);
+            db.BANGSUACHUAs.DeleteOnSubmit(q);
 
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                XtraMessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
     }
   
 }
